@@ -1,9 +1,11 @@
 import React from 'react';
+import Catagories from '../Catagories/Catagories';
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div>
             This is home component
+            <Catagories count={count} setCount={setCount} />
         </div>
     );
 };
