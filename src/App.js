@@ -3,17 +3,19 @@ import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Shipment from './components/Shipment/Shipment';
+import Catagories from './components/Catagories/Catagories';
 
-const catagoryContext = createContext()
+export const CategoryContext = createContext();
 
 function App() {
   const [count, setCount] = useState(0);
   return (
-    <div>
-      <Header count={count} setCount={setCount} />
+    <CategoryContext.Provider value={[count, setCount]}>
+      <Header />
       <Home />
       <Shipment />
-    </div>
+      <Catagories />
+    </CategoryContext.Provider>
   );
 }
 

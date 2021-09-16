@@ -1,11 +1,13 @@
 import React from 'react';
-import Catagories from '../Catagories/Catagories';
-
-const Home = (props) => {
+import { useContext } from 'react';
+import { CategoryContext } from '../../App';
+const Home = () => {
+    const [count, setCount] = useContext(CategoryContext)
     return (
         <div>
-            This is home component
-            <Catagories count={count} setCount={setCount} />
+            This is home component <br />
+            The number of items is {count}
+            <button onClick={() => setCount(count + 1)}>Increase</button>
         </div>
     );
 };
